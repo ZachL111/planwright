@@ -1,0 +1,28 @@
+{
+  "repo": "planwright",
+  "language": "SQL",
+  "category": "Databases",
+  "goal": "Validate indexing choices with sqlite3 fixtures and plan expectations.",
+  "weights": {
+    "signal": 3,
+    "slack": 1,
+    "confidence": 2,
+    "drag": 5
+  },
+  "thresholds": {
+    "ship": 162,
+    "watch": 99
+  },
+  "properties": [
+    "raising signal cannot reduce score",
+    "raising drag cannot improve score",
+    "lane labels must match configured thresholds",
+    "golden fixture ids must remain unique"
+  ],
+  "fixture_files": [
+    "fixtures/golden/scoreboard.csv",
+    "fixtures/golden/lane-matrix.csv",
+    "fixtures/fuzz/mutations.csv",
+    "fixtures/fuzz/boundary-cases.jsonl"
+  ]
+}
