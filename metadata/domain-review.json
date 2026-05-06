@@ -1,0 +1,73 @@
+{
+  "repo": "planwright",
+  "language": "SQL",
+  "category": "Databases",
+  "goal": "Validate indexing choices with sqlite3 fixtures and plan expectations.",
+  "review_model": {
+    "terms": [
+      "index fit",
+      "join width",
+      "constraint risk",
+      "plan drift"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "index fit",
+      "signal": 80,
+      "slack": 46,
+      "drag": 19,
+      "confidence": 60,
+      "score": 209,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "join width",
+      "signal": 73,
+      "slack": 47,
+      "drag": 14,
+      "confidence": 48,
+      "score": 199,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "constraint risk",
+      "signal": 65,
+      "slack": 39,
+      "drag": 21,
+      "confidence": 83,
+      "score": 189,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "plan drift",
+      "signal": 71,
+      "slack": 23,
+      "drag": 26,
+      "confidence": 92,
+      "score": 179,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "index fit",
+      "signal": 80,
+      "slack": 33,
+      "drag": 17,
+      "confidence": 81,
+      "score": 223,
+      "lane": "ship"
+    }
+  ]
+}
